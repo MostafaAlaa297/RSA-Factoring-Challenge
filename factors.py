@@ -1,4 +1,4 @@
-!#/usr/bin/env python3
+#!/usr/bin/env python3
 
 import sys
 import math
@@ -11,7 +11,7 @@ def factorize(number):
             number //= i
     if number > 1:
         factors.append(number)
-    return number
+    return factors
 
 def main():
     if len(sys.argv) != 2:
@@ -24,7 +24,7 @@ def main():
         for line in file:
             number = int(line.strip())
             factors = factorize(number)
-            print("{}={}*{}".format(number, factors[0], factors[1]))
+            print("{}={}*{}".format(number, min(factors), max(factors)))
 
-if name = "__main__":
+if __name__ == "__main__":
     main()
